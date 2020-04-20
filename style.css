@@ -12,6 +12,7 @@
 body{
     font-family: sans-serif;
     color:#fefefe;
+    overflow-x: hidden;
 }
 
 header{
@@ -36,6 +37,7 @@ nav h1{
     font-size: 2rem;
     flex:1;
     color:#ebb654;
+    letter-spacing: 2px;
 }
 nav ul{
     font-size: 1rem;
@@ -57,7 +59,19 @@ nav a {
     transition: all 500ms ease;
     z-index: -1;
 }
-
+.burger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;  
+    cursor: pointer;  
+}
+.burger div{
+    width:20px;
+    height: 3px;
+    background-color: #fefefe;
+    margin: 2px auto;
+    transition: 500ms ease;
+}
 section{
     min-height: 100vh;
     display: flex;
@@ -363,10 +377,13 @@ input:focus,textarea:focus{
     }
 }
 @media(max-width:590px){
+    .selected{
+        display: none;
+    }
     .icons{
         display: none;
         flex-direction: row;
-        bottom:90px;
+        bottom:80px;
         right: 0;
         margin-right:calc(50% - 96px)
         }
@@ -377,5 +394,28 @@ input:focus,textarea:focus{
     .primary, .secondary{
         width:90%;
         margin-bottom: 15px;
+    }
+    .burger{
+        display: flex;
+    }
+    .mobileNav {
+        position: absolute;
+        right: 0px;
+        top:10vh;
+        height: 90vh;
+        background: #244031;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transform: translateX(100%);  
+        transition: 750ms ease-in;
+        opacity: 0.95;
+    }
+    .mobileNav li{
+        opacity: 0;
+        transition: 350ms ease-in;
+        transition-delay: 550ms ;
+        font-size: 2rem;
     }
 }

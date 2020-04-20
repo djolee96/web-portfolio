@@ -65,3 +65,46 @@ sections.forEach( section =>{
   
 }
 
+// nav for mobile 
+
+{
+    const burger= document.querySelector(".burger");
+    const burgerLines=burger.querySelectorAll("div")
+    const nav = document.querySelector(".mobileNav");
+    const navLinks= nav.querySelectorAll("li");
+
+    const switchBurger=(burgerX)=>{
+    
+        const displayX=()=>{
+            burgerLines[0].style.transform="rotate(45deg) scale(2)"
+            burgerLines[1].style.display="none"
+            burgerLines[2].style.transform="rotate(-45deg) scale(2)"
+        }
+       
+        const dipslayLines=()=>{
+            burgerLines[0].style.transform="rotate(0deg) scale(1)"
+            burgerLines[1].style.display="block"
+            burgerLines[2].style.transform="rotate(0deg) scale(1)"
+        }
+
+        burgerX ? displayX() : dipslayLines()
+    }
+
+    const showMobileNav= ()=>{ 
+        nav.style.transform= "translateX(0%) "
+        navLinks.forEach(navLink=> {navLink.style.opacity="1"});
+        switchBurger(true)
+    }
+
+    const hideMobileNav=()=>{
+        nav.style.transform= "translateX(100%)"
+        navLinks.forEach(navLink=> {navLink.style.opacity="0"})
+        switchBurger(false)
+    }
+
+    burger.addEventListener("click", ()=>{
+        (nav.style.getPropertyValue("transform") === "translateX(0%)") ?  hideMobileNav() : showMobileNav() 
+    })
+
+
+}
