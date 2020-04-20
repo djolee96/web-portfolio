@@ -381,7 +381,7 @@ input:focus,textarea:focus{
     .icons{
         display: none;
         flex-direction: row;
-        bottom:80px;
+        bottom:-25px;
         right: 0;
         margin-right:calc(50% - 96px)
         }
