@@ -91,19 +91,19 @@ sections.forEach( section =>{
     }
 
     const showMobileNav= ()=>{ 
-        nav.style.transform= "translateX(0%) "
+        nav.style.height= "90vh "
         navLinks.forEach(navLink=> {navLink.style.opacity="1"});
         switchBurger(true)
     }
 
     const hideMobileNav=()=>{
-        nav.style.transform= "translateX(100%)"
+        nav.style.height= "0"
         navLinks.forEach(navLink=> {navLink.style.opacity="0"})
         switchBurger(false)
     }
 
     burger.addEventListener("click", ()=>{
-        (nav.style.getPropertyValue("transform") === "translateX(0%)") ?  hideMobileNav() : showMobileNav() 
+        (nav.style.getPropertyValue("height") === "90vh") ?  hideMobileNav() : showMobileNav() 
     })
 
 
