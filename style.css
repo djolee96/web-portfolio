@@ -76,10 +76,10 @@ section{
 }
 
 .skills{
-    background: #244031 ;
+    background: linear-gradient(to right bottom, #80a36a,#244031) ;
 }
 .projects{
-    background: #ebb654 ;
+    background:linear-gradient(to bottom,#244031 ,#80a36a 40%);    
 }
 
 
@@ -272,9 +272,12 @@ input:focus,textarea:focus{
 .projects-container{
     margin:0 auto;
     margin-top: 15vh;
+    margin-bottom: 5vh;
+    padding:0px 15px;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
+    box-shadow: 1px 1px 10px #121212;
 }
 
 .project-card-container{
@@ -290,7 +293,7 @@ input:focus,textarea:focus{
 .cut-off{
     width: 10%;
     height: 100%;
-    border-right: 1px dashed #ebb654 ;
+    border-right: 1px dashed #80a36a ;
     z-index: 1;
     background-color: rgba(36, 64, 49,0.7);
 }
@@ -299,7 +302,7 @@ input:focus,textarea:focus{
     height: 5px;
     position: relative;
     left: -5.5px;
-    background-color: #ebb654;
+    background:#80a36a;
     border-radius:0px 0px 10px 10px;
     z-index: 1;
 }
@@ -309,7 +312,7 @@ input:focus,textarea:focus{
     position: relative;
     top: calc(100% - 5px);
     left: -15.5px;
-    background-color: #ebb654;
+    background:#80a36a;
     border-radius: 10px 10px 0px 0px;
     z-index: 1;
 }
@@ -365,6 +368,56 @@ input:focus,textarea:focus{
 .project-link div:nth-child(1):hover{
     transform: translate(-10%,10%);
 }
+
+.selector{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+.selector > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 180px;
+    height: 30px;
+    background: #244031;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.selector-bit:hover, .selector-projects:hover{
+    transform: scale(1.1);
+}
+
+#circle{
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:-15px;
+    border-radius: 100%;
+    border: 1px solid #ebb654;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+}
+#circle div{
+    width:30px;
+    height: 2px;
+    margin:2px 0px;
+    background: #fefefe;
+}
+.bit{
+    display: none;
+}
+.personal{
+    display: flex;
+}
+.selector-projects{
+    border: 1px solid #ebb654;
+}
 @media(max-width:680px){
     #submit{
         width: 50%;
@@ -415,5 +468,14 @@ input:focus,textarea:focus{
         transition: 350ms ease-in;
         transition-delay: 250ms ;
         font-size: 2rem;
+    }
+
+    .selector-bit span {
+        transform: scale(0.7);
+        margin-left: -21px;
+    }
+    .selector-projects span {
+        transform: scale(0.7);
+        margin-left: 21px;
     }
 }

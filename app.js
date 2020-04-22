@@ -108,3 +108,29 @@ sections.forEach( section =>{
 
 
 }
+
+// filter projets
+
+{
+    const bitprojects= document.querySelector(".selector-bit");
+    const projets = document.querySelector(".selector-projects");
+    const bit= document.querySelectorAll(".bit");
+    const personal= document.querySelectorAll(".personal");
+
+    bitprojects.addEventListener('click', ()=>{
+        bitprojects.style.setProperty("border", " 1px solid #ebb654")
+        projets.style.setProperty("border","none")
+
+        bit.forEach(bit => {bit.style.setProperty("display",'flex')})
+        personal.forEach(personal=>{personal.style.setProperty("display",'none')})
+    } )
+
+    projets.addEventListener('click', ()=>{
+        projets.style.setProperty("border"," 1px solid #ebb654")
+        bitprojects.style.setProperty("border","none")
+
+
+        personal.forEach(personal => {personal.style.setProperty("display",'flex')})
+        bit.forEach(bit=>{bit.style.setProperty("display",'none')})
+    })
+}
